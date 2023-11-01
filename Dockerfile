@@ -32,9 +32,11 @@ EXPOSE 5230
 
 # Directory to store the data, which can be referenced as the mounting point.
 RUN mkdir -p /var/opt/memos
-VOLUME /var/opt/memos
+# Disabled on Railway
+# VOLUME /var/opt/memos
 
 ENV MEMOS_MODE="prod"
 ENV MEMOS_PORT="5230"
+ENV PORT="5230"
 
 ENTRYPOINT ["./memos"]
